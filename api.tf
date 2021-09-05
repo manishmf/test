@@ -1,5 +1,5 @@
 resource "aws_api_gateway_vpc_link" "this" {
-  name        = var.aws_api_gateway_vpc_link_name
+  name        = "awslinkvpc"
   target_arns = [aws_lb.main.arn]
 
   # depends_on = [aws_ec2_client_vpn_network_association.association]
@@ -7,7 +7,7 @@ resource "aws_api_gateway_vpc_link" "this" {
 }
 
 resource "aws_api_gateway_rest_api" "main" {
-  name = var.aws_api_gateway_rest_api_name
+  name = "apigatewayrest"
 }
 
 resource "aws_api_gateway_resource" "main" {
